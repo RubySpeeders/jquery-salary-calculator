@@ -1,6 +1,9 @@
-console.log('js');
 $(document).ready(onReady);
 
 function onReady() {
-  console.log('jq');
+  $('.js-submitButton').on('click', addEmployeeInfo);
+}
+
+function addEmployeeInfo() {
+  console.log('button works');
 }

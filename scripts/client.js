@@ -1,5 +1,7 @@
 $(document).ready(onReady);
 
+const employeeInfo = [];
+
 function onReady() {
   $('.js-submitButton').on('click', addEmployeeInfo);
 }
@@ -20,5 +22,5 @@ function addEmployeeInfo() {
     annualSalary,
   };
 
-  console.log(employee);
+  employeeInfo.push(employee);
 }

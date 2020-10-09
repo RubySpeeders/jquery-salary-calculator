@@ -23,4 +23,15 @@ function addEmployeeInfo() {
     annualSalary,
   };
   employeeInfo.push(employee);
+  addToTable();
+}
+
+function addToTable() {
+  $('.js-employeeInfo').empty();
+  for (let i = 0; i < employeeInfo.length; i++) {
+    const employee = employeeInfo[i];
+    $('.js-employeeInfo').append(
+      `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.employeeId}</td><td>${employee.jobTitle}</td><td>${employee.annualSalary}</td></tr>`
+    );
+  }
 }

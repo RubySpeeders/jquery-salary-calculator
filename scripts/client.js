@@ -14,6 +14,7 @@ function addEmployeeInfo() {
   const jobTitle = $('.js-jobTitle').val();
   const annualSalary = $('.js-annualSalary').val();
 
+  //store employee info
   const employee = {
     firstName,
     lastName,
@@ -21,6 +22,5 @@ function addEmployeeInfo() {
     jobTitle,
     annualSalary,
   };
-
   employeeInfo.push(employee);
 }

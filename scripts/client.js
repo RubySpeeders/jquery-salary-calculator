@@ -11,5 +11,14 @@ function addEmployeeInfo() {
   const idNumber = $('.js-idNumber').val();
   const jobTitle = $('.js-jobTitle').val();
   const annualSalary = $('.js-annualSalary').val();
-  console.log(firstName, lastName, idNumber, jobTitle, annualSalary);
+
+  const employee = {
+    firstName,
+    lastName,
+    employeeId: idNumber,
+    jobTitle,
+    annualSalary,
+  };
+
+  console.log(employee);
 }

@@ -4,6 +4,7 @@ const employeeInfo = [];
 
 function onReady() {
   $('.js-submitButton').on('click', addEmployeeInfo);
+  $('js-employeeInfo').on('click', '.js-deleteButton', deleteEmployee);
 }
 
 function addEmployeeInfo() {
@@ -24,6 +25,7 @@ function addEmployeeInfo() {
   };
   employeeInfo.push(employee);
   addToTable();
+  addMonthlyTotal();
 }
 
 function addToTable() {
@@ -31,7 +33,20 @@ function addToTable() {
   for (let i = 0; i < employeeInfo.length; i++) {
     const employee = employeeInfo[i];
     $('.js-employeeInfo').append(
-      `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.employeeId}</td><td>${employee.jobTitle}</td><td>$${employee.annualSalary}</td><td><button>Delete</button></td></tr>`
+      `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.employeeId}</td><td>${employee.jobTitle}</td><td>$${employee.annualSalary}</td><td><button class="js-deleteButton">Delete</button></td></tr>`
     );
   }
+}
+
+function addMonthlyTotal() {
+  let total = 0;
+  for (let i = 0; i < employeeInfo.length; i++) {
+    const monthlySalary = employeeInfo[i].annualSalary / 12;
+    total += monthlySalary;
+    $('.js-totalMonthly').text(total);
+  }
+}
+
+function deleteEmployee() {
+  console.log('delete works');
 }

@@ -45,6 +45,9 @@ function addMonthlyTotal() {
     total += monthlySalary;
     $('.js-totalMonthly').text(total);
   }
+  if (total > 20000) {
+    $('.js-totalMonthlyLine').css('background-color', 'tomato');
+  }
 }
 
 function deleteEmployee() {

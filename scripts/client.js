@@ -47,6 +47,7 @@ function addToTable() {
 function addMonthlyTotal() {
   let total = 0;
   for (let i = 0; i < employeeInfo.length; i++) {
+
     const monthlySalary = employeeInfo[i].annualSalary / 12;
     total += monthlySalary;
     let numberToTwoDecimals = parseFloat(total).toFixed(2);
@@ -54,6 +55,12 @@ function addMonthlyTotal() {
   }
   if (total > 20000) {
     $('.js-totalMonthlyLine').css('background-color', 'tomato');
+  } else {
+    $('.js-totalMonthlyLine').css('background-color', '');
+  }
+  if (employeeInfo.length === 0){
+    total = 0;
+    $('.js-totalMonthly').text(total);
   }
 }
 
@@ -61,13 +68,10 @@ function deleteEmployee() {
   //check if selected
   const index = $(this).data('index');
   employeeInfo[index].isSelected = true;
-  for (let i = 0; i < employeeInfo.length; i++) {
-    const item = employeeInfo[i]
-    if(item.isSelected) {
-      $(this).parent().parent().remove();
-      employeeInfo.splice(i, 1);
-    }
+    if (index > -1) {
+     // $(this).parent().parent().remove();
+      employeeInfo.splice(index, 1);
   }
+  addToTable();
   addMonthlyTotal();
-  
 }

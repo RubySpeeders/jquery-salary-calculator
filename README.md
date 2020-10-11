@@ -4,17 +4,21 @@ Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a page where one can input employee information (first name, last name, id number, job title, and annual salary) and calculates the monthly cost to pay all employees. If the monthly cost is greater than \$20,000, you will be notified with a red banner! If you need to delete an employee from the calculator, press the delete button.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Usage:
 
-Usage:
+1. Input your employee information in the input fields.
+2. Press Submit to see all employee information listed on the page.
+3. Press delete to clear an employee from the page.
 
-Built With:
+## Built With:
+
 HTML
 CSS
 Javascript
 JQuery
 
-Acknowledgement:
+## Acknowledgement:
+
 Thank you to Myron Schippers and Scott Bromander for teaching me skills to build this application.

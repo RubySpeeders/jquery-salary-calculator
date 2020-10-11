@@ -56,5 +56,5 @@ function addMonthlyTotal() {
 }
 
 function deleteEmployee() {
-  console.log('delete works');
+  $(this).parent().parent().remove();
 }

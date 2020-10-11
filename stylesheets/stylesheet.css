@@ -1,14 +1,25 @@
 html {
-  background-color: thistle;
+  background-color: lightgrey;
+}
+
+h1 {
+  text-align: center;
+  border: solid 1px;
+  padding: 25px;
+  margin: 15px;
 }
 
 h2 {
-  margin-top: 30px;
-  margin-bottom: 0;
+  margin-left: 30px;
+}
+
+.input-container {
+  padding: 30px;
 }
 
 .table {
   border-collapse: collapse;
+  margin-left: 40px;
 }
 .table td {
   border: 1px solid grey;

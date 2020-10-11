@@ -26,6 +26,11 @@ function addEmployeeInfo() {
   employeeInfo.push(employee);
   addToTable();
   addMonthlyTotal();
+  $('.js-firstName').val('');
+  $('.js-lastName').val('');
+  $('.js-idNumber').val('');
+  $('.js-jobTitle').val('');
+  $('.js-annualSalary').val('');
 }
 
 function addToTable() {

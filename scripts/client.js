@@ -42,7 +42,7 @@ function addMonthlyTotal() {
   let total = 0;
   for (let i = 0; i < employeeInfo.length; i++) {
     const monthlySalary = employeeInfo[i].annualSalary / 12;
-    total += monthlySalary;
+    total += Number(monthlySalary.toFixed(2));
     $('.js-totalMonthly').text(total);
   }
   if (total > 20000) {

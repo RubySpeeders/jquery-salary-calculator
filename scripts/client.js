@@ -4,7 +4,7 @@ const employeeInfo = [];
 
 function onReady() {
   $('.js-submitButton').on('click', addEmployeeInfo);
-  $('js-employeeInfo').on('click', '.js-deleteButton', deleteEmployee);
+  $('.js-employeeInfo').on('click', '.js-deleteButton', deleteEmployee);
 }
 
 function addEmployeeInfo() {

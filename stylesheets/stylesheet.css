@@ -25,3 +25,7 @@ h2 {
   border: 1px solid grey;
   padding: 6px 10px;
 }
+
+.totalMonthlyLine {
+  margin-right: 600px;
+}

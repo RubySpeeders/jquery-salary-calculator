@@ -22,6 +22,7 @@ function addEmployeeInfo() {
     employeeId: idNumber,
     jobTitle,
     annualSalary,
+    isSelected: false,
   };
   employeeInfo.push(employee);
   addToTable();
@@ -38,7 +39,7 @@ function addToTable() {
   for (let i = 0; i < employeeInfo.length; i++) {
     const employee = employeeInfo[i];
     $('.js-employeeInfo').append(
-      `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.employeeId}</td><td>${employee.jobTitle}</td><td>$${employee.annualSalary}</td><td><button class="js-deleteButton">Delete</button></td></tr>`
+      `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td><td>${employee.employeeId}</td><td>${employee.jobTitle}</td><td>$${employee.annualSalary}</td><td><button class="js-deleteButton" data-index="${i}">Delete</button></td></tr>`
     );
   }
 }
@@ -47,8 +48,9 @@ function addMonthlyTotal() {
   let total = 0;
   for (let i = 0; i < employeeInfo.length; i++) {
     const monthlySalary = employeeInfo[i].annualSalary / 12;
-    total += Number(monthlySalary.toFixed(2));
-    $('.js-totalMonthly').text(total);
+    total += monthlySalary;
+    let numberToTwoDecimals = parseFloat(total).toFixed(2);
+    $('.js-totalMonthly').text(numberToTwoDecimals);
   }
   if (total > 20000) {
     $('.js-totalMonthlyLine').css('background-color', 'tomato');
@@ -56,5 +58,15 @@ function addMonthlyTotal() {
 }
 
 function deleteEmployee() {
-  $(this).parent().parent().remove();
+  //check if selected
+  const index = $(this).data('index');
+  employeeInfo[index].isSelected = true;
+  for (let i = 0; i < employeeInfo.length; i++) {
+    const item = employeeInfo[i]
+    if(item.isSelected) {
+      $(this).parent().parent().remove();
+      employeeInfo.splice(i, 1);
+    }
+  }
+  
 }

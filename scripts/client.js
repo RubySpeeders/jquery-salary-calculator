@@ -68,5 +68,6 @@ function deleteEmployee() {
       employeeInfo.splice(i, 1);
     }
   }
+  addMonthlyTotal();
   
 }
